@@ -90,7 +90,7 @@ const CreatePost = () => {
             LabelName="Your Name"
             type="text"
             name="name"
-            placeholder="Suman Kumar"
+            placeholder="Toh name type kare mg"
             value={form.name}
             handelChange={handelChange}
           />
@@ -98,7 +98,7 @@ const CreatePost = () => {
             LabelName="Prompt"
             type="text"
             name="prompt"
-            placeholder="A plush toy robot sitting against a yellow wall"
+            placeholder="Subhe subhe bencho tum log 2 mp ka camera pakad ke"
             value={form.prompt}
             isSurpriseMe
             handelSurrpiseMe={handelSurrpiseMe}
