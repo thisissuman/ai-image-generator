@@ -30,13 +30,16 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setgeneratingImg(true);
-        const response = await fetch("https://ai-image-generator-7141.onrender.com/api/v1/sumanai", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ prompt: form.prompt }),
-        });
+        const response = await fetch(
+          "https://ai-image-generator-7141.onrender.com/api/v1/sumanai",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ prompt: form.prompt }),
+          }
+        );
 
         const data = await response.json();
         setform({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
@@ -55,13 +58,16 @@ const CreatePost = () => {
       setlaoding(true);
 
       try {
-        const response = await fetch("https://ai-image-generator-7141.onrender.com/api/v1/post", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(form),
-        });
+        const response = await fetch(
+          "https://ai-image-generator-7141.onrender.com/api/v1/post",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(form),
+          }
+        );
         await response.json();
 
         navigate("/");
@@ -90,7 +96,7 @@ const CreatePost = () => {
             LabelName="Your Name"
             type="text"
             name="name"
-            placeholder="Toh name type kare mg"
+            placeholder="type something intreseting"
             value={form.name}
             handelChange={handelChange}
           />
@@ -98,7 +104,7 @@ const CreatePost = () => {
             LabelName="Prompt"
             type="text"
             name="prompt"
-            placeholder="Subhe subhe bencho tum log 2 mp ka camera pakad ke"
+            placeholder="a surrealist dream-like oil painting by Salvador Dalí of a cat playing checkers"
             value={form.prompt}
             isSurpriseMe
             handelSurrpiseMe={handelSurrpiseMe}
